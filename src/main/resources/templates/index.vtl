@@ -1,0 +1,24 @@
+<h1>Welcome friends and family!</h1>
+#if($placesList)
+  <p>
+    All place(s):
+  </p>
+  <ul>
+    #foreach ($place in $placesList)
+    <li>$place.getDescription()</li>
+    #end
+  </ul>
+  #else
+  <p>
+    Please enter places you been.
+  </p>
+#end
+
+<p>
+  Add new Places:
+</p>
+<form action="/places" method="post">
+ <label for="place">Where have you been?</label>
+ <input id= "place" name="place" type="text">
+ <button type="submit" class="btn btn-default">Add Place</button>
+</form>
